@@ -49,4 +49,12 @@ exemple:
 Pour lister les programmes livrés avec coreutils, on peut utiliser la commande **dpkg -L coreutils**.
 Celui qui se nomme [, représente la commande [ qui est une commande de test et permet d'évaluer l'expression conditionnelle. C'est en réalité un synonyme de la commande built-in **test**.
 
-# **Exercice 5.**
+# **Exercice 5. aptitude**
+
+Il faut d'abord installer aptitude avec **sudo apt-get install aptitude**. Ensuite, on le lance avec **aptitude**. Une fois dans l'interface, on peut installer les paquets emacs et lynx en faisant une recherche des paquets grâce à /. On peut chercher le paquet emacs avec n. Une fois trouvé, on presse +, ensuite g une première fois puis g une deuxième fois pour installer. (personnellement ça ne fonctionne pas car je dois être root pour installer, la commande **sudo aptitude install emacs lynx** est une alternative à ceci).
+
+Lynx est un navigateurs web en mode texte utilisable via une console ou un terminal.
+Emacs est un éditeur de texte très puissant, extensible et personnalisable.
+
+# **Exercice 6. Installation d’un paquet par PPA**
+
