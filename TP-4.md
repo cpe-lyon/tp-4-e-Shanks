@@ -68,4 +68,13 @@ Ce fichier contient deux liens menant aux Launchpad PPA ("Personal Package Archi
 
 # **Exercice 7. Installation d’un logiciel à partir du code source**
 
+Commençons par cloner le dépôt git https://gitlab.com/jallbrit/cbonsai avec la commande **git clone https://gitlab.com/jallbrit/cbonsai**.
+Ceci nous permet de récupérer en local le code source du logiciel cbonsai.
 
+On se place ensuite dans le dossier cbonsai **cd cbonsai** puis **sudo apt install libncursesw5-dev** pour télécharger la librairie ncursesw.
+On continue avec **make install PREFIX=~/.local**.
+Enfin, on lance avec **~/.local/bin/cbonsai**.
+
+**sudo apt install checkinstall**
+**sudo checkinstall**
+Maintenant, un fichier /home/User/cbonsai/cbonsai_20220926-1_amd64.deb a été crée et on peut utiliser la commande cbonsai depuis n'importe quel dossier.
