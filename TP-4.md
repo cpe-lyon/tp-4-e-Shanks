@@ -58,3 +58,14 @@ Emacs est un éditeur de texte très puissant, extensible et personnalisable.
 
 # **Exercice 6. Installation d’un paquet par PPA**
 
+On installe la version Oracle de Java (avec l'ajout des PPA) avec les commandes ci-dessous:
+**sudo add-apt-repository ppa:linuxuprising/java**
+**sudo apt update**
+**sudo apt install oracle-java15-installer**
+
+Via la commande **ls /etc/apt/sources.list.d** on remarque qu'en effet un nouveau fichier a été crée: linuxuprising-ubuntu-java-jammy.list
+Ce fichier contient deux liens menant aux Launchpad PPA ("Personal Package Archive") qui sont des référentiels hébergés sur Launchpad que vous pouvez utiliser pour installer (ou mettre à niveau) des packages qui ne sont pas disponibles dans les référentiels officiels d'Ubuntu.
+
+# **Exercice 7. Installation d’un logiciel à partir du code source**
+
+
