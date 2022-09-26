@@ -46,4 +46,7 @@ exemple:
 
 # **Exercice 4.**
 
-Pour lister les programmes livrés avec coreutils, on peut utiliser la commande **dpkg -L coreutils** ou 
+Pour lister les programmes livrés avec coreutils, on peut utiliser la commande **dpkg -L coreutils**.
+Celui qui se nomme [, représente la commande [ qui est une commande de test et permet d'évaluer l'expression conditionnelle. C'est en réalité un synonyme de la commande built-in **test**.
+
+# **Exercice 5.**
