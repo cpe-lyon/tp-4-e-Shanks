@@ -37,3 +37,9 @@ find_package $1;
 
 echo $0;
 ```
+
+# **Exercice 3.**
+
+En utilisant la commande **dpkg** on peut spécifier -s pour trouver le status d'un paquet. Donc, via la commande **dpkg -s [paquet] | grep Status** récupère le status du paquet. On peut ensuite vérifier si ce status existe ou non. La commande **dpkg -s [paquet] | grep Status && echo "INSTALLÉ" || echo "NON INSTALLÉ"** va afficher installé si le paquet est installé ou non installé si le paquet n'est pas installé.
+exemple:
+![exemple](TP-4_exo3.jpg)
