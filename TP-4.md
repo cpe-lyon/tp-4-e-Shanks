@@ -75,6 +75,6 @@ On se place ensuite dans le dossier cbonsai **cd cbonsai** puis **sudo apt insta
 On continue avec **make install PREFIX=~/.local**.
 Enfin, on lance avec **~/.local/bin/cbonsai**.
 
-**sudo apt install checkinstall**
+**sudo apt install checkinstall**; 
 **sudo checkinstall**
 Maintenant, un fichier /home/User/cbonsai/cbonsai_20220926-1_amd64.deb a été crée et on peut utiliser la commande cbonsai depuis n'importe quel dossier.
