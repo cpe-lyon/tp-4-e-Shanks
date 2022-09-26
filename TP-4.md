@@ -10,8 +10,30 @@
 
 5 - **dpkg -l | wc -l** qui donne 623 et **apt list --installed | wc -l** qui donne 616.
 
-6 - 
+6 - Avec la commande **apt list | wc -l** on obtient un total de 68953 paquets disponibles en téléchargement.
 
 7 -
+* Le paquet glances: application en ligne de commande qui permet d'afficher l'état des principales ressources d'un système, de sa charge du fonctionnement des applications. **sudo apt-get install glances**
+* Le paquet tldr: Les pages tldr sont un effort communautaire pour simplifier les pages de manuel bien-aimées avec des exemples pratiques. **sudo apt-get install -y tldr**
+* Le paquet hollywood: Cet utilitaire divisera votre console en plusieurs volets d'authentiques technobabble, parfaitement adapté à tout mélodrame geek hollywoodien. Il est particulièrement adapté sur n'importe quel nombre de consoles informatiques dans le arrière-plan de tout excellent technothriller schlock. En d'autres termes, cela permet de simuler une fenêtre de hacking comme au cinéma. **sudo apt-get install hollywood**. (c'est stylé)
 
-8 -
+8 - Il existe plusieurs paquets pour pouvoir jouer au sudoku, tels que sudoku, gnome-sudoku, ksudoku, sudoku-solver.
+
+# **Exercice 2.**
+
+**dpkg -S ls** est une commande qui permet de trouver le paquet qui a installé la commande ls. On peut obtenir cette information en une seule commande: **dpkg -S $(which -a ls)** ou **which -a ls | xargs dpkg -S**.
+* **cd script**
+* **touch origine-commande**
+* **nano**
+```ruby
+#!/bin/bash
+
+find_package()
+{
+        dpkg -S $(which -a $1);
+}
+
+find_package $1;
+
+echo $0;
+```
