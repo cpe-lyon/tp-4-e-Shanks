@@ -78,3 +78,47 @@ Enfin, on lance avec **~/.local/bin/cbonsai**.
 **sudo apt install checkinstall**; 
 **sudo checkinstall**
 Maintenant, un fichier /home/User/cbonsai/cbonsai_20220926-1_amd64.deb a été crée et on peut utiliser la commande cbonsai depuis n'importe quel dossier.
+
+
+# **Exercice 8. Création de dépôt personnalisé**
+
+## *Création d’un paquet Debian avec dpkg-deb*
+
+1 - On créer d'abord le le sous-dossier origine-commande avec **mkdir script/origine-commande** dans lequel on créer un sous-dossier avec **cd script/origine-commande/DEBIAN**, ainsi que l'arborescence usr/local/bin avec **mkdir -p script/origine-commande/DEBIAN/usr/local/bin**. Enfin on y ajoute le script réalisé dans l'exercice 2 **mv origine-commande script/origine-commande/DEBIAN/usr/local/bin**.
+
+2 - **touch control**, puis on l'ouvre dans nano pour y écrire:
+Package: origine-commande
+Version: 0.1
+Maintainer: Foo Bar
+Architecture: all
+Description: Cherche l'origine d'une commande
+Section: utils
+Priority: optional
+
+3 - **dpkg-deb --build origine-commande** => building package 'origine-commande' in 'origine-commande.deb'.
+
+## *Création du dépôt personnel avec reprepro*
+
+1 - Dans mon dossier personnel, création du dossier repo-cpe qui sera la racine du dépôt: **mkdir repo-cpe**.
+
+2 - On y ajoute deux sous-dossiers: **mkdir repo-cpe/conf ; mkdir repo-cpe/packages**.
+
+3 - **cd repo-cpe/conf**, **touch distributions**. On lance le fichier depuis nano puis on tape:
+Origin: Un nom, une URL, ou tout texte expliquant la provenance du dépôt
+Label: Nom du dépôt
+Codename: focal
+Architectures: i386 amd64
+Components: universe
+Description: Une description du dépôt
+
+4 - D'abord on installe la commande **reprepr** avec **sudo apt install reprepro**. Ensuite on exécute la commande **reprepro -b . export**.
+
+5 - On copie le paquet à l'aide la commande **cp script/origine-commande.deb repo-cpe/packages** et qui va le coller dans le dossier packages. Puis à la racine du dépôt, repo-cpe, on exécute la commande **reprepro -b . includedeb cosmic origine-commande.deb**.
+
+6 - On se place dans le dossier **cd /etc/apt/sources.list.d** puis on créer le fichier **sudo touch repo-cpe.list**. Enfin on tape **sudo nano repo-cpe.list** dans lequel on ajoute *deb file:/home/VOTRE_NOM/repo-cpe cosmic multiverse*.
+
+7 - **sudo apt update**.
+
+## *Signature du dépôt avec GPG*
+
+1 - 
