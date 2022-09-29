@@ -89,7 +89,7 @@ Maintenant, un fichier /home/User/cbonsai/cbonsai_20220926-1_amd64.deb a été c
 2 - **touch control**, puis on l'ouvre dans nano pour y écrire:
 Package: origine-commande
 Version: 0.1
-Maintainer: Foo Bar
+Maintainer: Emeric Daumarie
 Architecture: all
 Description: Cherche l'origine d'une commande
 Section: utils
@@ -131,6 +131,6 @@ passphrase: CPElyonAdminLinux2022)
 
 3 - Ajout de la clé au dépôt: on se place dans le dépôt **cd repo-cpe**, et on ajoute la clé avec **reprepro --ask-passphrase -b . export**.
 
-4 - Clé publique ajoutée au dépôt **gpg --export -a "auteur" > public.key**.
+4 - Clé publique ajoutée au dépôt **gpg --export -a "Emeric" > public.key**.
 
 5 - **sudo apt-key add public.key** pour ajouter cette clé à la liste des clés fiables connues de apt.
