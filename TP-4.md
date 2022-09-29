@@ -121,4 +121,16 @@ Description: Une description du dépôt
 
 ## *Signature du dépôt avec GPG*
 
-1 - 
+1 - **gpg --gen-key**
+(pour pas oublier:
+Real name: Emeric
+email: emeric.daumarie@cpe.fr
+passphrase: CPElyonAdminLinux2022)
+
+2 - On ouvre le fichier **nano repo-cpe/conf/distributions** et y ajoute la ligne SignWith: yes.
+
+3 - Ajout de la clé au dépôt: on se place dans le dépôt **cd repo-cpe**, et on ajoute la clé avec **reprepro --ask-passphrase -b . export**.
+
+4 - Clé publique ajoutée au dépôt **gpg --export -a "auteur" > public.key**.
+
+5 - **sudo apt-key add public.key** pour ajouter cette clé à la liste des clés fiables connues de apt.
